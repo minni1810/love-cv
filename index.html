@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>She is Loyal 💘</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffafbd, #ffc3a0);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .box h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #fff;
+      text-shadow: 2px 2px #f06292;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .yes {
+      background-color: #4caf50;
+      color: white;
+      position: relative;
+    }
+
+    .no {
+      background-color: #f44336;
+      color: white;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>She Loves Me ? 💖</h1>
+    <div class="buttons">
+      <button class="yes" id="yesBtn">Yes</button>
+      <button class="no" onclick="alert('You said No 😢')">No</button>
+    </div>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.querySelector('.no');
+
+    yesBtn.addEventListener('mouseenter', () => {
+      const box = document.querySelector('.buttons');
+      const yes = yesBtn;
+      const no = noBtn;
+
+      // Swap positions
+      const temp = document.createElement("div");
+      box.insertBefore(temp, yes);
+      box.insertBefore(yes, no);
+      box.insertBefore(no, temp);
+      box.removeChild(temp);
+    });
+
+    yesBtn.addEventListener('click', () => {
+      alert("Nope 😝. You can't say Yes!");
+    });
+  </script>
+
+</body>
+</html>
